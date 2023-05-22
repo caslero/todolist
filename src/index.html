@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="../src/js/main.js" defer></script>
+    <link href="../dist/main.css" rel="stylesheet">
+    <title>Todo List</title>
+</head>
+<body>
+    <div id="fecha">              </div>
+    <h1 class="text-center text-5xl font-semibold my-10">Mi Primera Lista De Tareas</h1>
+
+   
+    <section class="container mx-auto xl:px-28">
+
+        <div class="container mx-auto xl:px-28 w-full h-14  flex flex-col md:flex-row items-center
+                    justify-end md:space-x-5 space-x-0 space-y-4 md:space-y-0">
+            <input class="w-[300px] h-10 bg-pink-200 border border-black" type="text" name=""
+                    id="input">
+
+            <div class="mr-6">
+                <button class="border border-black w-32 h-10 rounded-[20px] bg-pink-200 text-black
+                               hover:bg-pink-400" id="guardar">Guardar</button>
+            </div>
+        </div>
+
+        <div class="container mx-auto xl:px-28 flex justify-between mt-10" id="listatareas">
+            <div class="w-full flex flex-col items-center">
+                <h3 class="text-2xl font-semibold mb-6 ps-6">Tareas</h3>
+                <ul class="ps-6 border border-purple-500 w-full" id="listado">
+                   
+                </ul>
+            </div>
+        </div>
+
+        <style>
+            li {
+                display: flex;
+                justify-content: space-between;
+                
+                height: 30px;
+                margin-bottom: 20px;
+            }
+        </style>
+
+        <!-- 
+        <div id="sintareas">
+            <p>No hay tareas pendientes</p>
+        </div>-->
+    </section>
+    
+</body>
+</html>
+
+
+
+
+
+
