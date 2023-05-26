@@ -3,11 +3,13 @@
 const fecha = document.getElementById('fecha');
 const input = document.getElementById('input');
 const guardar = document.getElementById('guardar');
+const eliminar = document.getElementById('eliminar');
 const listado = document.getElementById('listado');
 
 const marcar = 'fa-check-circle';
 const desmarcar = 'fa-circle';
 const rayar = 'line-through';
+const borrar = 'hidden';
 let id
 
 let informacion
@@ -51,6 +53,7 @@ function tareaEliminada(element) {
     element.parentNode.parentNode.removeChild(element.parentNode);
     informacion[element.id].eliminado = true;
 }
+
 
 
 guardar.addEventListener('click', () => {
@@ -120,25 +123,18 @@ function cargarLista(DATA) {
 
 
 
+function eliminarTodo(element) {
+    
+    while (listado.firstChild) {
+        listado.removeChild(listado.firstChild);
+        informacion = [];      
+    }
+    localStorage.setItem('todo', JSON.stringify(informacion));
+}
 
-
-
-/**const datos = document.getElementById('datos');
-const listaTareas = document.getElementById('listatareas');
-const sinTareas = document.getElementById('sintareas');
-const botonGuardar = document.getElementById('botonguardar');
-const ulListado = document.getElementById('listado');
-
-botonGuardar.addEventListener("click", (e) => {
-    e.preventDefault();
-    //console.log(1);
-
-    const text = datos.value;
-
-    const lista = document.createElement('li');
-    const etiquetaP = document.createElement('p');
-    etiquetaP.textContent = text;
-
-    lista.appendChild(etiquetaP);
-    ulListado.appendChild(lista);
-}); */
+eliminar.addEventListener('click', function(event) {   
+        eliminarTodo();
+        
+    input.value = '';
+    localStorage.setItem('todo', JSON.stringify(informacion));
+});
